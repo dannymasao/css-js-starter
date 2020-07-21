@@ -1,0 +1,51 @@
+// Float
+.f-left {
+  float: left;  
+}
+
+.f-right {
+  float: right;
+}
+
+
+// Clearfix 
+.clearfix {
+  @include clearfix();
+}
+
+
+// Vertical Align 
+.va-top { 
+  vertical-align: top;
+}
+
+.va-middle {
+  vertical-align: middle;
+}
+
+.va-bottom {
+  vertical-align: bottom;
+}
+
+
+// Position
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: relative;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+// センタリング (親にposition: relative)
+.center {
+	@include center();
+}
+
+.flex-center {
+	@include flx-center();
+}

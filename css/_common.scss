@@ -1,0 +1,399 @@
+//////////////////////// Container
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	width: $content-width-basic;
+	max-width: $content-width-medium;
+}
+
+.container--sm {
+	max-width: $content-width-small;
+}
+
+.break-container {
+	@include break-container;
+
+	@include mq(lg) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+////////////////////////// Section
+
+.dark-section {
+	background-color: $black;
+	color: $text-light;
+}
+
+////////////////////////// Header
+
+.header-section {
+	background-color: $black;
+	color: $text-light;
+
+	a,
+	button {
+		color: currentColor;
+		&:hover,
+		&:active,
+		&:focus {
+			color: $link-light;
+		}
+	}
+}
+
+.header-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: $z-header;
+}
+
+.header-fixed + .main-offset {
+	margin-top: $headerHeight;
+
+	@include mq(lg) {
+		margin-top: $headerHeight-lg;
+	}
+}
+
+.header-offset {
+	margin-top: -15px;
+
+	@include mq(lg) {
+		margin-top: -20px;
+	}
+}
+
+// - 15px
+//  - 20px
+
+.header-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: $headerHeight;
+
+	@include mq(lg) {
+		height: $headerHeight-lg;
+	}
+}
+
+.site-logo {
+	width: 40px;
+	height: 40px;
+}
+
+.header-section__padding {
+	padding-top: $spacer-7;
+	padding-bottom: $spacer-8;
+}
+
+.header-section__inner {
+	.qr {
+		display: none;
+	}
+
+	@include mq(md) {
+		display: flex;
+		align-items: center;
+
+		.qr {
+			display: block;
+			// overflow: hidden;
+			flex-shrink: 0;
+			margin-left: auto;
+			padding-left: $spacer-4;
+
+			img {
+				border-radius: $br-md;
+				width: 124px;
+			}
+		}
+	}
+}
+
+.header-nav {
+	display: flex;
+
+	@include mq(mx-lg) {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: $z-header;
+		background-color: $black;
+		opacity: 0;
+		visibility: hidden;
+		@include transition();
+
+		.is-active & {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.header-menu {
+	display: block;
+	width: auto;
+	height: auto;
+	margin: auto;
+	text-align: center;
+
+	a {
+		font-size: $fs-xl;
+		display: inline-block;
+		border-bottom: 1px solid transparent;
+	}
+
+	& > * + * {
+		margin-top: $spacer-5;
+	}
+
+	@include mq(mx-lg) {
+		.menu-item {
+			--duration: #{$speed};
+			--delay: 0;
+			--yOffset: 20px;
+
+			display: block;
+			transform: translate3d(0, var(--yOffset), 0);
+			transition-duration: var(--duration);
+			transition-property: transform;
+			transition-timing-function: ease-out;
+			transition-delay: var(--delay);
+		}
+
+		.is-active & {
+			.menu-item {
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+	@include mq(lg) {
+		display: flex;
+		align-items: center;
+		margin-right: 0;
+
+		a {
+			font-size: $fs-sm;
+			line-height: $lh-md;
+
+			&:hover {
+				border-color: $link-light;
+			}
+		}
+
+		& > * + * {
+			margin-top: 0;
+			margin-left: $spacer-5;
+		}
+
+		.menu-item {
+			margin-top: -0.2em;
+		}
+	}
+}
+
+///// Hamburger /////
+
+$validArea: $headerHeight; //60px; // タップ可能エリアの一辺の長さ
+$menuBarWidth: $headerHeight / 2; //30px; // バンズ（or肉）の幅
+$menuBarHeight: 2px; // バンズ（or肉）の高さ
+$menuBarGap: 10px; // バンズと肉の隙間
+
+.hamburger-wrapper {
+	$offset: ($validArea - $menuBarWidth) / 2;
+	position: fixed;
+	top: 0;
+	right: calc(5vw - #{$offset});
+	z-index: $z-header;
+
+	@include mq(lg) {
+		display: none;
+	}
+}
+
+.hamburger {
+	position: relative;
+	display: block;
+	width: $validArea;
+	height: $validArea;
+	padding: 0;
+}
+
+.hamburger__item {
+	position: absolute;
+	display: block;
+	width: $menuBarWidth;
+	height: $menuBarHeight;
+	top: ($validArea - $menuBarHeight) / 2;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: currentColor;
+	transition: $speed ease-out;
+
+	&:nth-child(1) {
+		transform: translateY(-$menuBarGap);
+	}
+	&:nth-child(2) {
+	}
+	&:nth-child(3) {
+		transform: translateY($menuBarGap);
+	}
+
+	.is-active & {
+		&:nth-child(1) {
+			transform: translateY(0px) rotate(45deg);
+		}
+		&:nth-child(2) {
+			transform: translateX($menuBarWidth / 3);
+			opacity: 0;
+		}
+		&:nth-child(3) {
+			transform: translateY(0px) rotate(-45deg);
+		}
+	}
+}
+
+/////////////////////// Block Link
+
+.block-link {
+	display: block;
+	transition: $speed;
+
+	&:hover {
+		background-color: rgba($blue-light2, 0.125);
+	}
+
+	a {
+		display: block;
+		padding: $layout-spacing-lg 0;
+		color: currentColor;
+		width: $content-width-basic;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.block-link__title {
+	max-width: $content-width-small;
+}
+
+.block-link__title--en {
+	font-size: $fs-2xl;
+	line-height: 1;
+	margin-top: $layout-spacing;
+	margin-bottom: $layout-spacing;
+}
+
+@include mq(md) {
+	.block-link__title--en {
+		font-size: $fs-3xl;
+	}
+}
+
+@include mq(lg) {
+	.block-link__title--en {
+		margin-top: 0;
+		font-size: $fs-4xl;
+	}
+
+	.block-link {
+		padding-left: $layout-spacing-lg;
+		padding-right: $layout-spacing-lg;
+	}
+
+	.work-section {
+		.break-container {
+			margin-left: -$layout-spacing-lg;
+			margin-right: -$layout-spacing-lg;
+		}
+
+		.block-link {
+			a {
+				display: flex;
+				width: 100%;
+			}
+		}
+
+		.block-link__icon {
+			margin-right: $layout-spacing-lg;
+			flex-shrink: 0;
+		}
+	}
+
+	@supports (display: grid) {
+		.nextprev-nav {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+
+			.nextprev-nav__next {
+				grid-area: 1 / 2 / 2 / 3;
+			}
+
+			a {
+				width: auto;
+				text-align: center;
+				padding: $layout-spacing-xl 0;
+			}
+		}
+	}
+}
+
+///////////////////////////////// Footer
+.footer {
+	text-align: center;
+	background-color: $black;
+
+	p {
+		color: $gray;
+		font-size: $fs-sm;
+	}
+}
+
+.scroll-top {
+	position: fixed;
+	bottom: 40px;
+	right: 20px;
+	z-index: $z-scrolltop;
+	opacity: 0;
+	visibility: hidden;
+	@include transition($speed-slow);
+
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	a {
+		position: relative;
+		display: block;
+		background: $link;
+		color: white; //$text-light;
+		width: 5rem;
+		height: 5rem;
+		@include flx-center;
+		border-radius: 50%;
+		opacity: 0.8;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		span {
+			display: block;
+		}
+	}
+}
+
+.hr {
+	border: 0;
+	border-top: 1px solid $border-color;
+}

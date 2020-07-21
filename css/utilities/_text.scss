@@ -1,0 +1,125 @@
+/////////////////////////// Text Align
+.ta-left {
+	text-align: left;
+}
+.ta-right {
+	text-align: right;
+}
+.ta-center {
+	text-align: center;
+}
+.ta-justify {
+	text-align: justify;
+}
+
+/////////////////////////// Font Weight
+.fw-normal {
+	font-weight: $fw-normal;
+}
+.fw-bold {
+	font-weight: $fw-bold;
+}
+
+/////////////////////////// Font Size
+
+.fs-3xs {
+	font-size: $fs-3xs;
+}
+.fs-2xs {
+	font-size: $fs-2xs;
+}
+.fs-xs {
+	font-size: $fs-xs;
+}
+.fs-sm {
+	font-size: $fs-sm;
+}
+.fs-md {
+	font-size: $fs-md;
+}
+.fs-lg {
+	font-size: $fs-lg;
+}
+.fs-xl {
+	font-size: $fs-xl;
+}
+.fs-2xl {
+	font-size: $fs-2xl;
+}
+.fs-3xl {
+	font-size: $fs-3xl;
+}
+.fs-4xl {
+	font-size: $fs-4xl;
+}
+.fs-5xl {
+	font-size: $fs-5xl;
+}
+.fs-6xl {
+	font-size: $fs-6xl;
+}
+
+/////////////////////////// Line Height
+.lh-1 {
+	line-height: 1;
+}
+.lh-xs {
+	line-height: $lh-xs;
+}
+.lh-sm {
+	line-height: $lh-sm;
+}
+.lh-md {
+	line-height: $lh-md;
+}
+.lh-lg {
+	line-height: $lh-lg;
+}
+.lh-xl {
+	line-height: $lh-xl;
+}
+.lh-2xl {
+	line-height: $lh-2xl;
+}
+.lh-3xl {
+	line-height: $lh-3xl;
+}
+
+/////////////////////////// Letter Spacing
+.ls-sm {
+	letter-spacing: $ls-sm;
+}
+.ls-md {
+	letter-spacing: $ls-md;
+}
+.ls-lg {
+	letter-spacing: $ls-lg;
+}
+.ls-xl {
+	letter-spacing: $ls-xl;
+}
+
+/////////////////////////// Text Overflow
+.txt-ellipsis {
+	@include txt-ellipsis();
+}
+.txt-wrap {
+	@include txt-wrap();
+}
+
+/////////////////////////// Text Decoration
+.td-none {
+	text-decoration: none;
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited {
+		text-decoration: none;
+	}
+}
+
+/////////////////////////// Text Transform
+
+.uppercase {
+	text-transform: uppercase;
+}

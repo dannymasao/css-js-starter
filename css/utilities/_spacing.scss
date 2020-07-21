@@ -1,0 +1,220 @@
+//reference https://ether.thescenery.co/spacing/
+
+$sizes: (
+	0: $spacer-0,
+	1: $spacer-1,
+	2: $spacer-2,
+	3: $spacer-3,
+	4: $spacer-4,
+	5: $spacer-5,
+	6: $spacer-6,
+	7: $spacer-7 // 8: $spacer-8,
+		// 9: $spacer-9,
+		// 10: $spacer-10
+);
+
+/*
+** ///////////// Margin //////////////
+*/
+
+.m-0-auto {
+	margin: 0 auto;
+}
+
+/*
+**.m-0 〜 .m-10
+*/
+@each $size, $value in $sizes {
+	.m-#{$size} {
+		margin: $value;
+	}
+}
+
+/*
+**.mt-0 〜 .mt-10
+*/
+@each $size, $value in $sizes {
+	.mt-#{$size} {
+		margin-top: $value;
+	}
+}
+
+/*
+**.mr-0 〜 .mr-10
+*/
+@each $size, $value in $sizes {
+	.mr-#{$size} {
+		margin-right: $value;
+	}
+}
+
+/*
+**.mb-0 〜 .mb-10
+*/
+@each $size, $value in $sizes {
+	.mb-#{$size} {
+		margin-bottom: $value;
+	}
+}
+
+/*
+**.ml-0 〜 .ml-10
+*/
+@each $size, $value in $sizes {
+	.ml-#{$size} {
+		margin-left: $value;
+	}
+}
+
+/*
+**.my-0 〜 .my-10
+*/
+@each $size, $value in $sizes {
+	.my-#{$size} {
+		margin-top: $value;
+		margin-bottom: $value;
+	}
+}
+
+/*
+**.mx-0 〜 .mx-10
+*/
+@each $size, $value in $sizes {
+	.mx-#{$size} {
+		margin-left: $value;
+		margin-right: $value;
+	}
+}
+
+/*
+** ///////////// Padding //////////////
+*/
+
+/*
+**.p-0 〜 .p-10
+*/
+@each $size, $value in $sizes {
+	.p-#{$size} {
+		padding: $value;
+	}
+}
+
+/*
+**.pt-0 〜 .pt-10
+*/
+@each $size, $value in $sizes {
+	.pt-#{$size} {
+		padding-top: $value;
+	}
+}
+
+/*
+**.pr-0 〜 .pr-10
+*/
+@each $size, $value in $sizes {
+	.pr-#{$size} {
+		padding-right: $value;
+	}
+}
+
+/*
+**.pb-0 〜 .pb-10
+*/
+@each $size, $value in $sizes {
+	.pb-#{$size} {
+		padding-bottom: $value;
+	}
+}
+
+/*
+**.pl-0 〜 .pl-10
+*/
+@each $size, $value in $sizes {
+	.pl-#{$size} {
+		padding-left: $value;
+	}
+}
+
+/*
+**.py-0 〜 .py-10
+*/
+@each $size, $value in $sizes {
+	.py-#{$size} {
+		padding-top: $value;
+		padding-bottom: $value;
+	}
+}
+
+/*
+**.px-0 〜 .px-10
+*/
+@each $size, $value in $sizes {
+	.px-#{$size} {
+		padding-left: $value;
+		padding-right: $value;
+	}
+}
+
+/*
+** ////// Layout Spacing ///////
+*/
+
+.py-md {
+	padding-top: $layout-spacing;
+	padding-bottom: $layout-spacing;
+}
+
+.py-lg {
+	padding-top: $layout-spacing-lg;
+	padding-bottom: $layout-spacing-lg;
+}
+
+.py-xl {
+	padding-top: $layout-spacing-xl;
+	padding-bottom: $layout-spacing-xl;
+}
+
+.py-2xl {
+	padding-top: $layout-spacing-2xl;
+	padding-bottom: $layout-spacing-2xl;
+}
+
+.mt-md {
+	margin-top: $layout-spacing;
+}
+
+.mb-md {
+	margin-bottom: $layout-spacing;
+}
+
+.mt-lg {
+	margin-top: $layout-spacing-lg;
+}
+
+.mb-lg {
+	margin-bottom: $layout-spacing-lg;
+}
+
+.mt-xl {
+	margin-top: $layout-spacing-xl;
+}
+
+.mb-xl {
+	margin-bottom: $layout-spacing-xl;
+}
+
+.mt-2xl {
+	margin-top: $layout-spacing-2xl;
+}
+
+.mb-2xl {
+	margin-bottom: $layout-spacing-2xl;
+}
+
+.mt-3xl {
+	margin-top: $layout-spacing-3xl;
+}
+
+.mb-3xl {
+	margin-bottom: $layout-spacing-3xl;
+}

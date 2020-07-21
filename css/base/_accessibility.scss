@@ -1,0 +1,36 @@
+////////////////////// Accessibility ///////////////////////
+
+//JSが機能するときのみ作動
+.js {
+
+	// デフォルトフォーカス効果を削除
+	*:focus {
+		outline: none;
+	}
+
+	// キーボードを操作した場合はフォーカス効果を追加
+	body.user-is-tabbing *:focus {
+		outline: 2px solid #4d90fe !important; // for non-webkit browsers
+		outline: 5px auto -webkit-focus-ring-color !important;
+	}
+}
+
+// スクリーンリーダー用のテキスト
+.sr {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto !important;
+	}
+}

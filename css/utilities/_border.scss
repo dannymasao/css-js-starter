@@ -1,0 +1,35 @@
+// Border
+.brd {
+  border: $border;
+}
+
+.brd-top {
+  border-top: $border;
+}
+
+.brd-right {
+  border-right: $border;
+}
+
+.brd-left {
+  border-left: $border;
+}
+
+.brd-bottom {
+  border-bottom: $border;
+}
+
+
+
+// Border Radius
+.br-sm {
+  border-radius: $br-sm;
+}
+
+.br-md {
+  border-radius: $br-md;
+}
+
+.br-circle {
+  border-radius: $br-circle;
+}

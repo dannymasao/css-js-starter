@@ -1,0 +1,204 @@
+////////////////////// variables ////////////////////////
+
+//
+// Colors
+//
+$gray-lightest: hsl(240, 20%, 95%); //#f0f0f5
+$gray-lighter: hsl(240, 15%, 85%); //#d3d3de
+$gray-light: hsl(240, 15%, 80%); //#c4c4d4
+$gray: hsl(240, 15%, 60%); //#8a8aa8
+$gray-dark: hsl(240, 10%, 45%); //#67677e
+$gray-darker: hsl(240, 5%, 40%); //#61616b
+$gray-darkest: hsl(240, 5%, 30%); //#494950
+
+$gray-darkest-blue: hsl(240, 20%, 30%);
+
+$black-light: hsl(240, 10%, 25%); //#393946
+$black: hsl(240, 15%, 10%); //#16161d
+$rich-black: hsl(240, 40%, 10%);
+
+// Blue
+$blue-light: hsl(240, 100%, 80%);
+$blue-light2: hsl(240, 80%, 70%);
+$blue-light3: hsl(240, 30%, 50%);
+// $blue: hsl(240, 70%, 50%);// #1F48DF;
+
+$blue: hsl(225, 100%, 50%); //#1650ff;
+
+$red: hsl(0, 85%, 40%);
+$green: hsl(150, 85%, 40%);
+$purple: hsl(270, 50%, 40%);
+$dark-purple: hsl(250, 40%, 20%);
+
+// $pink-purple: hsl(270, 80%, 40%);
+
+// $background-gradient: linear-gradient(
+//     hsla(240, 12%, 20%, 1),
+//     hsla(240, 16%, 15%, 1)
+//     );
+
+// $background-gradient2: linear-gradient(to right, $black, rgba($blue-light2, 0.125), rgba($blue, 0.45));
+
+$background-gradient3: linear-gradient(
+	to right bottom,
+	$gray-light,
+	$blue-light
+);
+
+// $primary: ;
+// $secondary: ;
+
+$text-dark: $black; //$gray-darkest;
+$text-dark2: $gray-darkest;
+$text-light: $gray-light;
+$text-light2: $gray;
+
+//
+// Link Colors
+//
+$link-light: $blue-light;
+$link: $blue;
+$link-dark: $text-dark;
+
+//
+// SNS Colors
+//
+$twitter: #1da1f2;
+$facebook: #3b5998;
+$hatena: #00a4de;
+$pocket: #ef3f56;
+$line: #00c300;
+$google: #dc4e41;
+
+//
+// Border
+//
+$border-color: $gray-lighter;
+$border: 1px solid $border-color;
+
+//
+// Font Family
+//
+// $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// font weight
+$fw-normal: 400; //500;
+$fw-bold: bold; //700;
+
+//
+// Font sizes
+//
+$fs-base: 1.8rem;
+
+$fs-6xl: $fs-base * 8 / 1;
+$fs-5xl: $fs-base * 8 / 2;
+$fs-4xl: $fs-base * 8 / 3;
+$fs-3xl: $fs-base * 8 / 4;
+$fs-2xl: $fs-base * 8 / 5;
+$fs-xl: $fs-base * 8 / 6;
+$fs-lg: $fs-base * 8 / 7;
+$fs-md: $fs-base;
+$fs-sm: $fs-base * 8 / 9;
+$fs-xs: $fs-base * 8 / 10;
+$fs-2xs: $fs-base * 8 / 11;
+$fs-3xs: $fs-base * 8 / 12;
+
+//
+// Line Height
+//
+// 4の倍数
+$lh-base: 0.4rem;
+
+$lh-xs: $lh-base * 4; //1.6rem; //1
+$lh-sm: $lh-base * 5; //2.0rem; //1.2
+$lh-md: $lh-base * 6; //2.4rem; //1.5
+$lh-lg: $lh-base * 7; //2.8rem; //1.8
+$lh-xl: $lh-base * 8; //3.2rem; //2
+$lh-2xl: $lh-base * 9; //3.6rem;
+$lh-3xl: $lh-base * 10; //4.0rem;
+
+//
+// Letter Spacing
+//
+$ls-sm: 0.03em;
+$ls-md: 0.05em;
+$ls-lg: 0.08em;
+$ls-xl: 0.1em;
+
+//
+// Spacing (margin, padding)
+//
+$spacing-unit: 0.8rem; //8px
+
+$spacer-0: 0;
+$spacer-1: $spacing-unit; //8px
+$spacer-2: $spacing-unit * 2; //16px
+$spacer-3: $spacing-unit * 3; //24px
+$spacer-4: $spacing-unit * 4; //32px
+$spacer-5: $spacing-unit * 5; //40px
+$spacer-6: $spacing-unit * 8; //64px
+$spacer-7: $spacing-unit * 13; //104px
+$spacer-8: $spacing-unit * 16; //128px
+$spacer-9: $spacing-unit * 20; //160px
+
+//
+// Layout
+//
+$layout-spacing: $spacer-4;
+$layout-spacing-lg: $spacer-6;
+$layout-spacing-xl: $spacer-7;
+$layout-spacing-2xl: $spacer-8;
+$layout-spacing-3xl: $spacer-9;
+
+//
+// Border Radius 角丸
+//
+$br-sm: 0.2rem;
+$br-md: 0.4rem;
+$br-circle: 50%;
+
+//
+// Transition Speed
+//
+$speed-fast: 0.1s;
+$speed: 0.25s; //デフォルト
+$speed-slow: 0.4s;
+
+//
+//Breakpoints
+// メディアクエリ用のブレイクポイント
+// コードはmixin
+$breakpoints: (
+	"xs": "screen and (min-width: 360px)",
+	"sm": "screen and (min-width: 500px)",
+	"md": "screen and (min-width: 700px)",
+	"lg": "screen and (min-width: 900px)",
+	"xl": "screen and (min-width: 1100px)",
+	"mx-sm": "screen and (max-width: 499px)",
+	"mx-md": "screen and (max-width: 699px)",
+	"mx-lg": "screen and (max-width: 899px)",
+	"mx-xl": "screen and (max-width: 1099px)"
+);
+
+//
+// Content Width　コンテンツ幅
+//
+$content-width-medium: 104rem;
+$content-width-small: 72rem;
+
+$content-width-basic: 90vw;
+$content-width-space: (100 - $content-width-basic) / 2;
+
+//
+// Header
+//
+$headerHeight: 60px;
+$headerHeight-lg: 70px;
+
+//
+// Z-Index
+//
+$z-scrolltop: 1000;
+$z-header: 1500;
+$z-loading: 5000;
+

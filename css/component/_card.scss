@@ -1,0 +1,140 @@
+/////////////////////////////// Card Grid
+
+.card-grid {
+	> * + * {
+		margin-top: $layout-spacing-lg;
+	}
+
+	@supports (display: grid) {
+		@include mq(md) {
+			> * + * {
+				margin-top: 0;
+			}
+
+			display: grid;
+
+			grid-gap: $content-width-space;
+
+			// .archive--design &,
+			&.is-2-col {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			// .archive--illustration &,
+			&.is-3-col {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+		@include mq(xl) {
+			grid-gap: $layout-spacing-lg;
+		}
+	}
+}
+
+.card {
+	display: block;
+	color: $text-dark;
+}
+
+.card__thumb {
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 100%;
+		height: 100%;
+		background-color: rgba($link, 0.25);
+		// @include polygon;
+		mix-blend-mode: multiply;
+		transform: translate3d(0, 0, 0);
+		@include transition;
+		border-radius: $br-sm;
+		z-index: -1;
+	}
+}
+
+.card__thumb-inner {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-color: $gray;
+	transition: $speed-slow;
+	overflow: hidden;
+	border-radius: $br-sm;
+	position: relative;
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.is-golden & {
+		@include aspect-golden;
+	}
+	.is-square & {
+		@include aspect-square;
+	}
+}
+
+.card__text {
+	margin-top: $spacer-3;
+}
+
+.card__text-main {
+	font-size: $fs-lg;
+	line-height: $lh-lg;
+	font-weight: bold;
+
+	.icon {
+		display: inline;
+		vertical-align: middle;
+	}
+}
+
+.card__text-sub {
+	color: $gray;
+	font-size: $fs-sm;
+	line-height: 1;
+	margin-top: $spacer-1;
+}
+
+.card:hover {
+	color: $link;
+
+	.card__thumb {
+		&::before {
+			transform: translate3d(-10px, -10px, 0);
+		}
+	}
+}
+
+.home {
+	.card {
+		color: $text-light;
+
+		&:hover {
+			color: $link-light;
+		}
+	}
+	.card__thumb {
+		&::before {
+			background-color: rgba($link-light, 0.25);
+			mix-blend-mode: normal;
+		}
+	}
+
+	.card__text-main {
+		font-size: $fs-md;
+		font-weight: normal;
+		line-height: $lh-lg;
+	}
+}

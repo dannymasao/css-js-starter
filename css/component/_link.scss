@@ -1,0 +1,91 @@
+//////////////////////////////////// Link
+
+.text-link {
+	color: $link;
+	border-bottom: 1px solid currentColor;
+
+	&:focus,
+	&:hover,
+	&:active {
+		color: $link-dark;
+		border-color: transparent;
+	}
+}
+
+.text-link-with-icon {
+	display: inline-flex;
+	align-items: center;
+	line-height: 1.6;
+
+	svg {
+		width: 1em;
+		height: 1em;
+		// display: inline-block;
+		// vertical-align: middle;
+		margin-left: 0.2em;
+	}
+}
+
+////////////////////////// Arrow Link
+
+.arrow-link {
+	display: inline-flex;
+	align-items: center;
+	margin-left: auto;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		display: block;
+		content: "";
+		top: 50%;
+		right: 0;
+		margin-top: -$spacer-1/2;
+		width: $spacer-1;
+		height: $spacer-1;
+		transform: rotate(45deg);
+		border: 1px solid currentColor;
+		border-left-color: transparent;
+		border-bottom-color: transparent;
+	}
+
+	&::after {
+		display: block;
+		content: "";
+		width: $spacer-5;
+		height: 1px;
+		background-color: currentColor;
+		margin-left: $spacer-2;
+	}
+
+	&.arrow-link--left {
+		padding-left: calc(#{$spacer-5} + #{$spacer-2});
+
+		&::before {
+			right: auto;
+			left: 0;
+			transform: rotate(-135deg);
+		}
+
+		&::after {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin-top: -1px;
+			margin-left: 0;
+		}
+	}
+
+	&.arrow-link--hover {
+		display: none;
+	}
+}
+
+@include mq(lg) {
+	.block-link:hover,
+	.contact-list__link:hover {
+		.arrow-link--hover {
+			display: flex;
+		}
+	}
+}

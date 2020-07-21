@@ -1,0 +1,32 @@
+//基盤
+@import "base/variables";
+@import "base/mixins";
+@import "base/sanitize";
+@import "base/base";
+@import "base/accessibility";
+
+// コンポーネント
+@import "component/link";
+@import "component/card";
+@import "component/button";
+@import "component/icon";
+@import "component/form";
+
+// ページ
+// @import "page/archive";
+// @import "page/home";
+// @import "page/post";
+// @import "page/page";
+
+// ユティリティー
+@import "utilities/alignment"; // float, vertical align, position
+@import "utilities/border"; // border, border radius
+@import "utilities/colors"; // color, background-color
+@import "utilities/display";
+@import "utilities/flex";
+@import "utilities/spacing"; // margin, padding
+@import "utilities/text"; // text-align, font-weight, font-size, line-height
+
+// @import "sal";
+@import "effect";
+@import "common";

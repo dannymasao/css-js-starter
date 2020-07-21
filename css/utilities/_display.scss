@@ -1,0 +1,74 @@
+// Display
+
+.d-block {
+	display: block;
+}
+
+.d-inline {
+	display: inline;
+}
+
+.d-inblock {
+	display: inline-block;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.d-inflex {
+	display: inline-flex;
+}
+
+.d-none {
+	display: none;
+}
+
+// レスポンシブ
+
+@include mq(sm) {
+	.sm_d-flex {
+		display: flex;
+	}
+}
+
+@include mq(md) {
+	.md_d-flex {
+		display: flex;
+	}
+}
+
+@include mq(lg) {
+	.lg_d-flex {
+		display: flex;
+	}
+}
+
+@include mq(xl) {
+	.xl_d-flex {
+		display: flex;
+	}
+}
+
+// 画面によって非表示
+// @include mq(mx-sm) {
+//   .mxsm_hide {
+//     display: none;
+//   }
+// }
+
+// @include mq(mx-md) {
+//   .mxmd_hide {
+//     display: none;
+//   }
+// }
+
+// @include mq(mx-lg) {
+//   .mxlg_hide {
+//     display: none;
+//   }
+// }
+
+.o-hidden {
+	overflow: hidden;
+}

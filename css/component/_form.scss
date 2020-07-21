@@ -1,0 +1,99 @@
+input,
+textarea {
+	display: inline-block;
+	padding: $spacer-1 $spacer-2;
+	font-size: $fs-md;
+	font-weight: 400;
+	// line-height: $lh-md;
+	color: currentColor;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: $border;
+	border-radius: $br-md;
+	@include transition();
+
+	&:hover {
+		border-color: $link;
+	}
+	&:focus {
+		border-color: $link;
+	}
+
+	&[aria-invalid="true"] {
+		border-color: $red;
+	}
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+	appearance: none;
+	cursor: pointer;
+}
+
+.post-password-form {
+	text-align: center;
+
+	.pass-input {
+		display: flex;
+		justify-content: center;
+	}
+
+	// label {
+	// 	font-size: $fs-xs;
+	// 	color: $gray-dark;
+	// 	width: 100%;
+	// 	text-align: left;
+	// }
+
+	input[type="password"] {
+		flex-grow: 1;
+		max-width: 300px;
+
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	input[type="submit"] {
+		background-color: $link;
+		color: white;
+		border-color: $link;
+
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+
+		&:hover {
+			background-color: $black;
+			border-color: $black;
+		}
+	}
+}
+
+// Contact Form 7
+.wpcf7-form {
+	> p + p {
+		margin-top: $spacer-4;
+	}
+
+	label {
+		font-size: $fs-xs;
+		color: $gray-dark;
+	}
+	input,
+	textarea {
+		display: block;
+		width: 100%;
+	}
+
+	input[type="submit"] {
+		background-color: $link;
+		color: white;
+		border-color: $link;
+
+		&:hover {
+			background-color: $black;
+			border-color: $black;
+		}
+	}
+}

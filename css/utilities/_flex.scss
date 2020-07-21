@@ -1,0 +1,49 @@
+// display flex, display inline-flexは_display.scss内
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-nowrap {
+	flex-wrap: nowrap;
+}
+
+.flex-grow1 {
+	flex-grow: 1;
+}
+
+.flex-shrink0 {
+	flex-shrink: 0;
+}
+
+.ai-center {
+	align-items: center;
+}
+
+.ai-start {
+	align-items: flex-start;
+}
+
+.ai-end {
+	align-items: flex-end;
+}
+
+.jc-center {
+	justify-content: center;
+}
+
+.jc-bet {
+	justify-content: space-between;
+}
+
+.jc-around {
+	justify-content: space-around;
+}
+
+.jc-end {
+	justify-content: flex-end;
+}

@@ -1,0 +1,111 @@
+////////////////////// Base ////////////////////////
+
+// body,
+// html {
+//   height: 100%;
+// }
+
+html {
+	-webkit-tap-highlight-color: transparent;
+	-ms-overflow-style: scrollbar;
+	font-size: 62.5%; /* 1em = 10px */
+	scroll-behavior: smooth;
+}
+
+@-ms-viewport {
+	width: device-width;
+}
+
+body {
+	background: $gray-lightest;
+	color: $text-dark;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Yu Gothic Medium", YuGothic, sans-serif;
+	font-weight: $fw-normal;
+	font-size: $fs-md; //1.6em;
+	line-height: $lh-xl;
+	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+}
+
+a {
+	outline: none;
+	text-decoration: none;
+	&:focus,
+	&:hover,
+	&:active {
+		text-decoration: none;
+	}
+}
+
+button {
+	background: transparent;
+	appearance: none;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	user-select: none;
+}
+
+// transition
+a,
+button {
+	@include transition();
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+	display: block;
+}
+
+ul,
+ol,
+dl,
+dt,
+dd {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: $fs-md;
+	font-weight: $fw-normal;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+strong {
+	font-weight: $fw-bold;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+figure {
+	margin: 0;
+}
+
+iframe {
+	width: 100%;
+	border: none;
+}
