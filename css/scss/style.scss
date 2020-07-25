@@ -1,0 +1,87 @@
+@import 'variables';
+
+@mixin modifiers($map, $attribute) {
+  @each $key, $value in $map {
+    &-#{$key} {
+      @if type-of($value) == 'map' {
+        @include modifiers($value, $attribute);
+      }
+      @else {
+        #{$attribute}: $value;
+      }
+    }
+  }
+}
+
+@mixin mqMin($breakpoint: sm) {
+  @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin mqMax($breakpoint: sm) {
+  @media screen and (max-width: #{map-get($breakpoints, $breakpoint)-1}) {
+    @content;
+  }
+}
+
+
+////////////// Text Size
+//
+.text {
+  @include modifiers($map: $font-size, $attribute: 'font-size');
+}
+
+//////// Media Query Min
+//
+// .min-xs_text {
+//   @include mqMin(xs) {
+//     @include modifiers($map: $font-size, $attribute: 'font-size');
+//   }
+// }
+
+.min-sm_text {
+  @include mqMin(sm) {
+    @include modifiers($map: $font-size, $attribute: 'font-size');
+  }
+}
+
+.min-md_text {
+  @include mqMin(md) {
+    @include modifiers($map: $font-size, $attribute: 'font-size');
+  }
+}
+
+.min-lg_text {
+  @include mqMin(lg) {
+    @include modifiers($map: $font-size, $attribute: 'font-size');
+  }
+}
+
+//////// Media Query Max
+//
+// .max-sm_text {
+//   @include mqMax(sm) {
+//     @include modifiers($map: $font-size, $attribute: 'font-size');
+//   }
+// }
+
+// .max-md_text {
+//   @include mqMax(md) {
+//     @include modifiers($map: $font-size, $attribute: 'font-size');
+//   }
+// }
+
+
+
+////////////// Text Color
+//
+.text {
+  @include modifiers($map: $colors, $attribute: 'color');
+}
+
+////////////// Background Color
+//
+.bg {
+  @include modifiers($map: $colors, $attribute: 'background-color');
+}

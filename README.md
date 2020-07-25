@@ -1,3 +1,3 @@
 # css-js-starter
 
-sass --watch sass-utilities/utilities.scss sass-utilities/style.css
+sass --watch css/scss/style.scss css/style.css
