@@ -1,0 +1,38 @@
+{
+  "name": "css-js-starter",
+  "version": "1.0.0",
+  "description": "sass --watch css/scss/style.scss css/style.css",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass css/scss/style.scss css/style.css",
+    "sass:watch": "sass --watch css/scss/style.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannymasao/css-js-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dannymasao/css-js-starter/issues"
+  },
+  "homepage": "https://github.com/dannymasao/css-js-starter#readme",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "autoprefixer": "^9.8.5",
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}

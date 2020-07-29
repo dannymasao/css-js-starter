@@ -1,5 +1,6 @@
-@import 'variables';
+@import 'base/variables';
 
+// based on: https://frontstuff.io/generate-all-your-utility-classes-with-sass-maps
 @mixin modifiers($map, $attribute) {
   @each $key, $value in $map {
     &-#{$key} {
