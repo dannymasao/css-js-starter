@@ -1,0 +1,33 @@
+////////////// Modifier
+//
+// based on: https://frontstuff.io/generate-all-your-utility-classes-with-sass-maps
+@mixin modifiers($map, $attribute) {
+  @each $key, $value in $map {
+    &-#{$key} {
+      @if type-of($value) == 'map' {
+        @include modifiers($value, $attribute);
+      }
+      @else {
+        #{$attribute}: $value;
+      }
+    }
+  }
+}
+
+////////////// Media Query
+//
+//////// Min
+//
+@mixin mqMin($breakpoint: sm) {
+  @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+//////// Max
+//
+@mixin mqMax($breakpoint: sm) {
+  @media screen and (max-width: #{map-get($breakpoints, $breakpoint)-1}) {
+    @content;
+  }
+}
