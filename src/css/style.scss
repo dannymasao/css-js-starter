@@ -1,64 +1,12 @@
-@import 'base/variables';
-@import 'base/mixin';
+@import "base/variables";
+@import "base/mixin";
 
 
+/*! purgecss start ignore */
 
-////////////// Text Size
-//
-.text {
-  @include modifiers($map: $font-size, $attribute: 'font-size');
-}
+@import "base/reset";
 
-//////// Media Query Min
-//
-// .min-xs_text {
-//   @include mqMin(xs) {
-//     @include modifiers($map: $font-size, $attribute: 'font-size');
-//   }
-// }
+/*! purgecss end ignore */
 
-.min-sm_text {
-  @include mqMin(sm) {
-    @include modifiers($map: $font-size, $attribute: 'font-size');
-  }
-}
+@import "text";
 
-.min-md_text {
-  @include mqMin(md) {
-    @include modifiers($map: $font-size, $attribute: 'font-size');
-  }
-}
-
-.min-lg_text {
-  @include mqMin(lg) {
-    @include modifiers($map: $font-size, $attribute: 'font-size');
-  }
-}
-
-//////// Media Query Max
-//
-// .max-sm_text {
-//   @include mqMax(sm) {
-//     @include modifiers($map: $font-size, $attribute: 'font-size');
-//   }
-// }
-
-// .max-md_text {
-//   @include mqMax(md) {
-//     @include modifiers($map: $font-size, $attribute: 'font-size');
-//   }
-// }
-
-
-
-////////////// Text Color
-//
-.text {
-  @include modifiers($map: $colors, $attribute: 'color');
-}
-
-////////////// Background Color
-//
-.bg {
-  @include modifiers($map: $colors, $attribute: 'background-color');
-}

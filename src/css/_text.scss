@@ -1,0 +1,115 @@
+////////////// フォントサイズ Loop版
+//
+// サイズは_variables.scssの$font-sizeで定義
+//
+// 出力例
+// .text-xs {
+//     font-size: 0.75rem;
+// }
+
+@each $size, $value in $font-size {
+    .text-#{$size} {
+      font-size: $value;
+    }
+}
+
+//////// レスポンシブ (min-width)
+//
+// 出力例
+// @media screen and (min-width: 370px) {
+//     .xs_text-xs {
+//       font-size: 0.75rem;
+//     }
+// }
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+        @each $fsSize, $fsValue in $font-size {
+            .#{$bpSize}_text-#{$fsSize} {
+                font-size: $fsValue;
+            }
+        }
+    }
+}
+
+//////// レスポンシブ (max-width)
+//
+// 出力例
+// @media screen and (max-width: 499px) {
+//  .mw-sm_text-xs {
+//      font-size: 0.75rem;
+//  }
+// }
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (max-width:#{($bpValue)-1}) {
+        @each $fsSize, $fsValue in $font-size {
+            .mw-#{$bpSize}_text-#{$fsSize} {
+                font-size: $fsValue;
+            }
+        }
+    }
+}
+
+
+
+
+////////////// フォントサイズ Mixin版
+//
+// .text {
+//   @include modifiers($map: $font-size, $attribute: 'font-size');
+// }
+
+//////// Media Query Min
+//
+// .min-xs_text {
+//   @include mqMin(xs) {
+//     @include modifiers($map: $font-size, $attribute: 'font-size');
+//   }
+// }
+
+// .min-sm_text {
+//   @include mqMin(sm) {
+//     @include modifiers($map: $font-size, $attribute: 'font-size');
+//   }
+// }
+
+// .min-md_text {
+//   @include mqMin(md) {
+//     @include modifiers($map: $font-size, $attribute: 'font-size');
+//   }
+// }
+
+// .min-lg_text {
+//   @include mqMin(lg) {
+//     @include modifiers($map: $font-size, $attribute: 'font-size');
+//   }
+// }
+
+//////// Media Query Max
+//
+// .max-sm_text {
+//   @include mqMax(sm) {
+//     @include modifiers($map: $font-size, $attribute: 'font-size');
+//   }
+// }
+
+// .max-md_text {
+//   @include mqMax(md) {
+//     @include modifiers($map: $font-size, $attribute: 'font-size');
+//   }
+// }
+
+
+
+////////////// Text Color
+//
+// .text {
+//   @include modifiers($map: $colors, $attribute: 'color');
+// }
+
+////////////// Background Color
+//
+// .bg {
+//   @include modifiers($map: $colors, $attribute: 'background-color');
+// }
