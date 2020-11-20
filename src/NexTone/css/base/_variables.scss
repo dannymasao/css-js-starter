@@ -1,0 +1,219 @@
+$breakpoints: (
+	xs: 370px,
+	sm: 640px,
+	md: 768px,
+	lg: 1024px,
+  xl: 1280px,
+  2xl: 1440px,
+);
+
+$container: (
+	sm: 720px,
+	md: 960px,
+	lg: 1280px,
+	xl: 1600px,
+	2xl: 2000px,
+);
+
+
+
+/* ----------- Font Size ----------- */
+
+$fs-xs: 0.75rem;
+$fs-sm: 0.875rem;
+$fs-base: 1rem;
+$fs-lg: 1.125rem;
+$fs-xl: 1.25rem;
+$fs-2xl: 1.5rem;
+$fs-3xl: 1.875rem;
+$fs-4xl: 2.25rem;
+$fs-5xl: 3rem;
+$fs-6xl: 4rem;
+
+$font-size: (
+  xs: $fs-xs,
+  sm: $fs-sm,
+  base: $fs-base,
+  lg: $fs-lg,
+  xl: $fs-xl,
+  2xl: $fs-2xl,
+  3xl: $fs-3xl,
+  4xl: $fs-4xl,
+  5xl: $fs-5xl,
+  6xl: $fs-6xl,
+);
+
+// Heading
+$min-font-hero: 34px;
+$max-font-hero: 50px;
+
+$min-font-section: 28px;
+$max-font-section: 40px;
+
+//Letter Spacing
+$tracking: (
+	tighter: -0.05em,
+	tight: -0.025em,
+	normal: 0,
+	wide: 0.025em,
+	wider: 0.05em,
+	widest: 0.1em,
+);
+
+//Line Height
+$leading: (
+	none: 1,
+	tight: 1.2,
+	snug: 1.4,
+	normal: 1.6,
+	relaxed: 1.8,
+	loose: 2,
+);
+
+
+/* ----------- Spacing ----------- */
+$space-0: 0;
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.25rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+$space-16: 4rem;
+$space-20: 5rem;
+$space-24: 6rem;
+$space-32: 8rem;
+$space-40: 10rem;
+$space-48: 12rem;
+$space-56: 14rem;
+$space-64: 16rem;
+
+$spacing: (
+	0: $space-0,
+	1: $space-1,
+	2: $space-2,
+	3: $space-3,
+	4: $space-4,
+	5: $space-5,
+	6: $space-6,
+	8: $space-8,
+	10: $space-10,
+	12: $space-12,
+	16: $space-16,
+	20: $space-20,
+	24: $space-24,
+	32: $space-32,
+	40: $space-40,
+	48: $space-48,
+	56: $space-56,
+	64: $space-64,
+);
+
+// $spacing: map-merge(
+//   (
+//     "test": test,
+//   ),
+//   $spacing,
+// );
+
+$size: map-merge(
+	(
+		auto: auto,
+		half: 50%,
+		1of3: 33.333333%,
+		2of3: 66.666667%,
+		1of4: 25%,
+		// 2/4: 50%,
+		3of4: 75%,
+		1of5: 20%,
+		2of5: 40%,
+		3of5: 60%,
+		4of5: 80%,
+		1of6: 16.666667%,
+		// 2/6: 33.333333%,
+		// 3/6: 50%,
+		// 4/6: 66.666667%,
+		5of6: 83.333333%,
+		1of12: 8.333333%,
+		2of12: 16.666667%,
+		// 3/12: 25%,
+		4of12: 33.333333%,
+		5of12: 41.666667%,
+		// 6/12: 50%,
+		7of12: 58.333333%,
+		8of12: 66.666667%,
+		// 9/12: 75%,
+		// 10/12: 83.333333%,
+		11of12: 91.666667%,
+		full: 100%,
+		// screen: 100vw,
+	),
+	$spacing,
+);
+
+
+
+/* ----------- Colors ----------- */
+
+$white:    #fff;
+$gray-100: #f7fafc;
+$gray-200: #edf2f7;
+$gray-300: #e2e8f0;
+$gray-400: #cbd5e0;
+$gray-500: #a0aec0;
+$gray-600: #718096;
+$gray-700: #4a5568;
+$gray-800: #2d3748;
+$gray-900: #1a202c;
+$black:    #000;
+
+$gray: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+);
+
+$navy: #293543;
+$cream: #FFF9F1;
+$yellow: #FFE066;
+$orange-light: #FF9933;
+$orange: #f08300;
+$primary:       $orange;
+$secondary:     $navy;
+
+$color: (
+	transparent: transparent,
+  current: currentColor,
+  white: $white,
+  black: $black,
+  primary: $primary,
+  secondary: $secondary,
+);
+
+$color-text: $navy;
+$color-logo-mark: $orange;
+$color-logo-text: #727171;
+
+
+$z-scrolltop: 500;
+$z-header: 1000;
+$z-loading: 2000;
+
+// $header-height: 4rem;
+// $header-height-lg: 8rem;
+
+$btn-border-radius: .3em;
+$block-border-radius: .2em;
+
+$transition: all .25s ease-in-out;
+
+$logo-angle: 41deg;

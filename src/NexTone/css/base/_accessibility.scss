@@ -1,0 +1,40 @@
+// --------------------------------------------------------------------
+// Screen Readers
+// --------------------------------------------------------------------
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+
+// --------------------------------------------------------------------
+// JS
+// --------------------------------------------------------------------
+
+.js {
+
+	// デフォルトフォーカス効果を削除
+	*:focus {
+		outline: none;
+	}
+
+	// キーボードを操作した場合はフォーカス効果を追加
+	body.user-is-tabbing *:focus {
+		outline: 2px solid #4d90fe !important; // for non-webkit browsers
+		outline: 2px auto -webkit-focus-ring-color !important;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto !important;
+	}
+}

@@ -1,0 +1,113 @@
+// --------------------------------------------------------------------
+// Font Size
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .text-xs {
+//     font-size: 0.75rem;
+// }
+// ----------------------------------
+
+@each $size, $value in $font-size {
+    .text-#{$size} {
+      font-size: $value;
+    }
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+//
+// 出力例
+// @media screen and (min-width: 370px) {
+//     .xs:text-xs {
+//       font-size: 0.75rem;
+//     }
+// }
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+        @each $fsSize, $fsValue in $font-size {
+            .#{$bpSize}\:text-#{$fsSize} {
+                font-size: $fsValue;
+            }
+        }
+    }
+}
+
+// ----------------------------------
+// レスポンシブ (max-width)
+//
+// 出力例
+// @media screen and (max-width: 499px) {
+//  .max-sm:text-xs {
+//      font-size: 0.75rem;
+//  }
+// }
+// ----------------------------------
+
+// @each $bpSize, $bpValue in $breakpoints {
+//     @media screen and (max-width:#{($bpValue)-1}) {
+//         @each $fsSize, $fsValue in $font-size {
+//             .max-#{$bpSize}\:text-#{$fsSize} {
+//                 font-size: $fsValue;
+//             }
+//         }
+//     }
+// }
+
+
+
+// --------------------------------------------------------------------
+// Font Weight
+// --------------------------------------------------------------------
+
+.font-thin {
+  font-weight: 200;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-black {
+  font-weight: 900;
+}
+
+
+
+// --------------------------------------------------------------------
+// Text Align
+// --------------------------------------------------------------------
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+
+        .#{$bpSize}\:text-left {
+          text-align: left;
+        }
+        .#{$bpSize}\:text-center {
+          text-align: center;
+        }
+        .#{$bpSize}\:text-right {
+          text-align: right;
+        }
+
+    }
+}

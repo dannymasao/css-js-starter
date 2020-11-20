@@ -1,0 +1,50 @@
+// --------------------------------------------------------------------
+// Space Between
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .space-x-4 > * + * {
+//    margin-left: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+	.space-x-#{$name} > * + * {
+		margin-left: $value;
+	}
+}
+
+// ----------------------------------
+// 出力例
+// .space-y-4 > * + * {
+//    margin-top: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+	.space-y-#{$name} > * + * {
+		margin-top: $value;
+	}
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+	@media screen and (min-width:#{$bpValue}) {
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:space-x-#{$name} > * + * {
+				margin-left: $value;
+			}
+		}
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:space-y-#{$name} > * + * {
+				margin-top: $value;
+			}
+		}
+
+	}
+}

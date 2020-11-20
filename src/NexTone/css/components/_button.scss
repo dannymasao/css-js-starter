@@ -1,0 +1,171 @@
+// --------------------------------------------------------------------
+// Button
+// --------------------------------------------------------------------
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+  font-weight: bold;
+  text-align: center;
+	user-select: none;
+	color: white;
+  background-color: $color-text;
+	border: 1px solid transparent;
+	line-height: 1.2;
+	border-radius: $btn-border-radius;
+	letter-spacing: map-get($tracking, wider);
+
+  &:focus {
+    outline: 0;
+  }
+
+  .icon {
+    transform: translate3d(0, 0, 0);
+    transition: $transition;
+  }
+
+  &:hover {
+    .icon {
+      transform: translate3d(.3em, 0, 0);
+    }
+  }
+
+}
+
+.btn-transparent {
+	background: transparent;
+	color: $color-text;
+}
+
+.btn-effect {
+  position: relative;
+  overflow: hidden;
+  border-width: 2px;
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    background-color: $white;//$gray-400;
+    position: absolute;
+    width: 120%;
+    height: 500%;
+    transition: all .1s linear;
+    top: -150%;//-10%;//90%;
+    left: -20%;//-130%;
+    opacity: 0.5;
+    transform: rotate($logo-angle) translate(-50%, 70%);
+  }
+
+  &::after {
+    content: '';
+    background-color: $white;
+    position: absolute;
+    width: 120%;
+    height: 500%;
+    // transform: ;
+    transition: all .1s linear .1s;
+    top: -150%;//-10%;//90%;
+    left: -20%;//-130%;
+    // opacity: 0.5;
+    transform: rotate($logo-angle) translate(-50%, 70%);
+  }
+
+  &:hover {
+    color: $color-text;
+
+    &::before {
+      // transition: all .3s linear .1s;
+      transform: rotate($logo-angle) translate(0, 0);
+    }
+    &::after {
+      // transition: all .3s linear;
+      transform: rotate($logo-angle) translate(0, 0);
+    }
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
+}
+
+//
+// Alternate buttons
+//
+
+.btn-inverse {
+  background-color: white;
+  color: $color-text;
+}
+
+
+//
+// Button Sizes
+//
+
+.btn-sm {
+  padding: .5rem .8rem;
+}
+
+.btn-md {
+	padding: .8rem 2rem;
+}
+
+.btn-lg {
+	padding: 1rem 2.5rem;
+}
+
+.btn-xl {
+	padding: 1.5rem 4rem;
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+
+        .#{$bpSize}\:btn-sm {
+          padding: .5rem .8rem;
+        }
+       .#{$bpSize}\:btn-md {
+          padding: .8rem 2rem;
+        }
+        .#{$bpSize}\:btn-lg {
+          padding: 1rem 2.5rem;
+        }
+        .#{$bpSize}\:btn-xl {
+          padding: 1.5rem 4rem;
+        }
+
+    }
+}
+
+
+
+//
+// Block button
+//
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-shadow {
+	box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1), 0 6px 6px -2.5px rgba(0, 0, 0, 0.05);
+
+  @include mq(md) {
+    &:hover {
+      box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0), 0 5px 5px -2.5px rgba(0, 0, 0, 0);
+    }
+	}
+
+}

@@ -1,0 +1,266 @@
+// --------------------------------------------------------------------
+// Align Items
+// --------------------------------------------------------------------
+
+// 値設定
+$align-items: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch,
+);
+
+// ----------------------------------
+// 出力例
+// .items-center {
+//    align-items: center;
+// }
+// ----------------------------------
+
+@each $name, $value in $align-items {
+  .items-#{$name} {
+    align-items: $value;
+  }
+}
+
+
+
+// --------------------------------------------------------------------
+// Justify Content
+// --------------------------------------------------------------------
+
+// 値設定
+$justify-content: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+);
+
+// ----------------------------------
+// 出力例
+// .justify-center {
+//    justify-content: center;
+// }
+// ----------------------------------
+
+@each $name, $value in $justify-content {
+  .justify-#{$name} {
+    justify-content: $value;
+  }
+}
+
+
+
+// --------------------------------------------------------------------
+// Flex Direction
+// --------------------------------------------------------------------
+
+// 値設定
+$flex-direction: (
+  row: row,
+  row-reverse: row-reverse,
+  col: column,
+  col-reverse: column-reverse,
+);
+
+// ----------------------------------
+// 出力例
+// .flex-col {
+//    flex-direction: column;
+// }
+// ----------------------------------
+
+@each $name, $value in $flex-direction {
+  .flex-#{$name} {
+    flex-direction: $value;
+  }
+}
+
+
+
+// --------------------------------------------------------------------
+// Flex Wrap
+// --------------------------------------------------------------------
+
+// 値設定
+$flex-wrap: (
+  wrap: wrap,
+  wrap-reverse: wrap-reverse,
+  no-wrap: nowrap,
+);
+
+// ----------------------------------
+// 出力例
+// .flex-wrap {
+//    flex-wrap: wrap;
+// }
+// ----------------------------------
+
+@each $name, $value in $flex-wrap {
+  .flex-#{$name} {
+    flex-wrap: $value;
+  }
+}
+
+
+
+// --------------------------------------------------------------------
+// Flex Grow / Flex Shrink
+// --------------------------------------------------------------------
+
+// 値設定
+$flex-grow: (
+  grow-0: 0,
+  grow: 1,
+);
+
+$flex-shrink: (
+  shrink-0: 0,
+  shrink: 1,
+);
+
+// ----------------------------------
+// 出力例
+// .flex-grow-0 {
+//    flex-grow: 0;
+// }
+// .flex-grow {
+//   flex-grow: 1;
+// }
+// ----------------------------------
+
+@each $name, $value in $flex-grow {
+  .flex-#{$name} {
+    flex-grow: $value;
+  }
+}
+
+@each $name, $value in $flex-shrink {
+  .flex-#{$name} {
+    flex-shrink: $value;
+  }
+}
+
+
+
+// --------------------------------------------------------------------
+// Flex
+// --------------------------------------------------------------------
+
+// 値設定
+$flex: (
+  1: 1 1 0%,
+  auto: 1 1 auto,
+  initial: 0 1 auto,
+  none: none,
+);
+
+// ----------------------------------
+// 出力例
+// .flex-1 {
+//    flex: 1 1 0%;
+// }
+// ----------------------------------
+
+@each $name, $value in $flex {
+  .flex-#{$name} {
+    flex: $value;
+  }
+}
+
+
+
+// --------------------------------------------------------------------
+// Order
+// --------------------------------------------------------------------
+
+// 値設定
+$order: (
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  first: -9999,
+  last: 9999,
+  none: 0,
+);
+
+// ----------------------------------
+// 出力例
+// .order-1 {
+//    order: 1;
+// }
+// ----------------------------------
+
+@each $name, $value in $order {
+  .order-#{$name} {
+    order: $value;
+  }
+}
+
+
+
+// ----------------------------------
+// レスポンシブ (min-width)
+//
+// 出力例
+// @media screen and (min-width: 768px) {
+//   .md\:flex-grow-0 {
+//     flex-grow: 0;
+//   }
+//   .md\:flex-grow {
+//     flex-grow: 1;
+//   }
+// }
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+
+        @each $name, $value in $align-items {
+          .#{$bpSize}\:items-#{$name} {
+            align-items: $value;
+          }
+        }
+
+        @each $name, $value in $justify-content {
+          .#{$bpSize}\:justify-#{$name} {
+            justify-content: $value;
+          }
+        }
+
+        @each $name, $value in $flex-direction {
+          .#{$bpSize}\:flex-#{$name} {
+            flex-direction: $value;
+          }
+        }
+
+        @each $name, $value in $flex-wrap {
+          .#{$bpSize}\:flex-#{$name} {
+            flex-wrap: $value;
+          }
+        }
+
+        @each $name, $value in $flex-grow {
+          .#{$bpSize}\:flex-#{$name} {
+            flex-grow: $value;
+          }
+        }
+        @each $name, $value in $flex-shrink {
+            .#{$bpSize}\:flex-#{$name} {
+              flex-shrink: $value;
+            }
+        }
+        @each $name, $value in $order {
+          .#{$bpSize}\:order-#{$name} {
+            order: $value;
+          }
+        }
+
+    }
+}

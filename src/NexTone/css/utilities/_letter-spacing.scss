@@ -1,0 +1,39 @@
+// --------------------------------------------------------------------
+// Letter Spacing
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .tracking-normal {
+//  	letter-spacing: 0;
+// }
+// ----------------------------------
+
+@each $name, $value in $tracking {
+    .tracking-#{$name} {
+      letter-spacing: $value;
+    }
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+//
+// 出力例
+// @media screen and (min-width: 768px) {
+//   .md\:tracking-tighter {
+//     letter-spacing: -0.05em;
+// 	}
+// }
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+
+			@each $name, $value in $tracking {
+					.#{$bpSize}\:tracking-#{$name} {
+						letter-spacing: $value;
+					}
+			}
+
+    }
+}

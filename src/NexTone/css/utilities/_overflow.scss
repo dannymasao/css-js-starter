@@ -1,0 +1,30 @@
+// --------------------------------------------------------------------
+// Overflow
+// --------------------------------------------------------------------
+
+$overflow: (auto, hidden, visible, scroll);
+
+// ----------------------------------
+// 出力例
+// .overflow-hidden {
+//   overflow: relative;
+// }
+// ----------------------------------
+
+@each $value in $overflow {
+  .overflow-#{$value} {
+    overflow: $value;
+  }
+}
+
+@each $value in $overflow {
+  .overflow-x-#{$value} {
+    overflow-x: $value;
+  }
+}
+
+@each $value in $overflow {
+  .overflow-y-#{$value} {
+    overflow-y: $value;
+  }
+}

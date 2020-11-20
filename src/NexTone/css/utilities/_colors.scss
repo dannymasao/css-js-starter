@@ -1,0 +1,177 @@
+// --------------------------------------------------------------------
+// Text Color
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .text-white	{
+//   color: #fff;
+// }
+// ----------------------------------
+
+@each $name, $value in $color {
+    .text-#{$name} {
+      color: $value;
+    }
+}
+
+// ----------------------------------
+// 出力例
+// .text-gray-400	{
+//   color: #cbd5e0;
+// }
+// ----------------------------------
+
+@each $name, $value in $gray {
+    .text-gray-#{$name} {
+      color: $value;
+    }
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+//
+// 出力例
+// @media screen and (min-width: 1280px) {
+//   .xl\:text-transparent {
+//     color: transparent;
+//   }
+// }
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+
+        @each $name, $value in $color {
+          .#{$bpSize}\:text-#{$name} {
+            color: $value;
+          }
+        }
+        @each $name, $value in $gray {
+          .#{$bpSize}\:text-gray-#{$name} {
+            color: $value;
+          }
+        }
+
+    }
+}
+
+
+
+// --------------------------------------------------------------------
+// Background Color
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .bg-white	{
+//   background-color: #fff;
+// }
+// ----------------------------------
+
+@each $name, $value in $color {
+    .bg-#{$name} {
+      background-color: $value;
+    }
+}
+
+// ----------------------------------
+// 出力例
+// .bg-gray-400	{
+//   background-color: #cbd5e0;
+// }
+// ----------------------------------
+
+@each $name, $value in $gray {
+    .bg-gray-#{$name} {
+      background-color: $value;
+    }
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+//
+// 出力例
+// @media screen and (min-width: 1280px) {
+//   .xl\:bg-transparent {
+//     background-color: transparent;
+//   }
+// }
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+
+        @each $name, $value in $color {
+          .#{$bpSize}\:bg-#{$name} {
+            background-color: $value;
+          }
+        }
+        @each $name, $value in $gray {
+          .#{$bpSize}\:bg-gray-#{$name} {
+            background-color: $value;
+          }
+        }
+
+    }
+}
+
+
+
+// --------------------------------------------------------------------
+// Border Color
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .border-white	{
+//   border-color: #fff;
+// }
+// ----------------------------------
+
+@each $name, $value in $color {
+    .border-#{$name} {
+      border-color: $value;
+    }
+}
+
+// ----------------------------------
+// 出力例
+// .border-gray-400	{
+//   border-color: #cbd5e0;
+// }
+// ----------------------------------
+
+@each $name, $value in $gray {
+    .border-gray-#{$name} {
+      border-color: $value;
+    }
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+//
+// 出力例
+// @media screen and (min-width: 1280px) {
+//   .xl\:border-transparent {
+//     border-color: transparent;
+//   }
+// }
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+
+        @each $name, $value in $color {
+          .#{$bpSize}\:border-#{$name} {
+            border-color: $value;
+          }
+        }
+        @each $name, $value in $gray {
+          .#{$bpSize}\:border-gray-#{$name} {
+            border-color: $value;
+          }
+        }
+
+    }
+}

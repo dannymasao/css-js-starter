@@ -1,0 +1,156 @@
+.swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+}
+
+.swiper-pagination {
+  position: absolute;
+  transition: 300ms opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+
+  .swiper-navigation-center & {
+    text-align: center;
+    padding-right: 0;
+  }
+  .swiper-navigation-right & {
+    text-align: right;
+    padding-right: 66px;
+  }
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 4px;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 100%;
+  background: currentColor;
+  opacity: 0.2;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  bottom: 3px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+
+  .icon {
+    padding: .25em;
+    border-radius: 50%;
+    background-color: rgba($color-text, 0.125);
+  }
+
+  @include mq(md) {
+    bottom: 3px;
+  }
+
+  @include mq(lg) {
+    opacity: 0.5;
+    transition: $transition;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+}
+
+.swiper-navigation-center {
+  .swiper-button-next {
+    right: 12%;
+    left: auto;
+  }
+  .swiper-button-prev {
+    left: 12%;
+    right: auto;
+  }
+
+  @include mq(xs) {
+    .swiper-button-next {
+      right: 20%;
+    }
+    .swiper-button-prev {
+      left: 20%;
+    }
+  }
+
+  @include mq(sm) {
+    .swiper-button-next {
+      right: 30%;
+    }
+    .swiper-button-prev {
+      left: 30%;
+    }
+  }
+
+  @include mq(md) {
+    .swiper-button-next {
+      right: 35%;
+    }
+    .swiper-button-prev {
+      left: 35%;
+    }
+  }
+}
+
+.swiper-navigation-right {
+  .swiper-button-next {
+    right: 16px;
+  }
+  .swiper-button-prev {
+    right: 160px;
+  }
+}
+
+.swiper-container .swiper-notification {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    opacity: 0;
+    z-index: -1000;
+}

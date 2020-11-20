@@ -1,0 +1,264 @@
+// --------------------------------------------------------------------
+// Margin
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .m-4 {
+//    margin: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .m-#{$name} {
+    margin: $value;
+  }
+}
+
+.m-auto {
+	margin: auto;
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+	@media screen and (min-width:#{$bpValue}) {
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:m-#{$name} {
+				margin: $value;
+			}
+		}
+
+		.#{$bpSize}\:m-auto {
+			margin: auto;
+		}
+
+	}
+}
+
+
+
+// --------------------------------------------------------------------
+// Margin Top / Bottom
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .my-4 {
+//    margin-top: 1rem;
+// 		margin-bottom: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .my-#{$name} {
+		margin-top: $value;
+		margin-bottom: $value;
+  }
+}
+
+.my-auto {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+// ----------------------------------
+// 出力例
+// .mt-4 {
+//    margin-top: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .mt-#{$name} {
+		margin-top: $value;
+  }
+}
+
+.mt-auto {
+	margin-top: auto;
+}
+
+// ----------------------------------
+// 出力例
+// .mb-4 {
+//    margin-bottom: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .mb-#{$name} {
+		margin-bottom: $value;
+  }
+}
+
+.mb-auto {
+	margin-bottom: auto;
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+	@media screen and (min-width:#{$bpValue}) {
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:my-#{$name} {
+				margin-top: $value;
+				margin-bottom: $value;
+			}
+		}
+
+		.#{$bpSize}\:my-auto {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:mt-#{$name} {
+				margin-top: $value;
+			}
+		}
+
+		.#{$bpSize}\:mt-auto {
+			margin-top: auto;
+		}
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:mb-#{$name} {
+				margin-bottom: $value;
+			}
+		}
+
+		.#{$bpSize}\:mb-auto {
+			margin-bottom: auto;
+		}
+
+	}
+}
+
+
+
+// --------------------------------------------------------------------
+// Margin Left / Right
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .mx-4 {
+// 		margin-left: 1rem;
+// 		margin-right: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .mx-#{$name} {
+		margin-left: $value;
+		margin-right: $value;
+  }
+}
+
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// ----------------------------------
+// 出力例
+// .ml-4 {
+// 		margin-left: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .ml-#{$name} {
+		margin-left: $value;
+  }
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+// ----------------------------------
+// 出力例
+// .mr-4 {
+// 		margin-right: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .mr-#{$name} {
+		margin-right: $value;
+  }
+}
+
+.mr-auto {
+	margin-right: auto;
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+	@media screen and (min-width:#{$bpValue}) {
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:mx-#{$name} {
+				margin-left: $value;
+				margin-right: $value;
+			}
+		}
+
+		.#{$bpSize}\:mx-auto {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:ml-#{$name} {
+				margin-left: $value;
+			}
+		}
+
+		.#{$bpSize}\:ml-auto {
+			margin-left: auto;
+		}
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:mr-#{$name} {
+				margin-right: $value;
+			}
+		}
+
+		.#{$bpSize}\:mr-auto {
+			margin-right: auto;
+		}
+
+	}
+}
+
+
+
+// --------------------------------------------------------------------
+// Negative Margin
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .-m-4 {
+//    margin: -1rem;
+// }
+// ----------------------------------
+
+// @each $name, $value in $spacing {
+//   .-m-#{$name} {
+//     margin: -$value;
+//   }
+// }
+

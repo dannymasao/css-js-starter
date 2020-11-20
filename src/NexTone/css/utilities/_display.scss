@@ -1,0 +1,47 @@
+// --------------------------------------------------------------------
+// Display
+// --------------------------------------------------------------------
+
+$display: (
+	block: block,
+	inline-block: inline-block,
+	inline: inline,
+	flex: flex,
+  inline-flex: inline-flex,
+  grid: grid,
+  hidden: none,
+);
+
+// ----------------------------------
+// 出力例
+// .block {
+//  display: block;
+// }
+// ----------------------------------
+
+@each $name, $value in $display {
+    .#{$name} {
+      display: $value;
+    }
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+//
+// 出力例
+// @media screen and (min-width: 370px) {
+//     .xs:block {
+//       display: block;
+//     }
+// }
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+        @each $name, $value in $display {
+            .#{$bpSize}\:#{$name} {
+              display: $value;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+// --------------------------------------------------------------------
+// Container
+// --------------------------------------------------------------------
+
+.container-padding {
+	padding-left: $space-4;
+	padding-right: $space-4;
+	box-sizing: content-box;
+}
+
+.container-padding-2 {
+	padding-left: $space-8;
+	padding-right: $space-8;
+	box-sizing: content-box;
+}
+
+.container-break {
+	margin-left: -$space-4;
+	margin-right: -$space-4;
+}
+
+// ----------------------------------
+// 出力例
+// .container-md {
+//   max-width: 960px;
+// }
+// ----------------------------------
+
+@each $size, $value in $container {
+	.container-#{$size} {
+		max-width: $value;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+
+				.#{$bpSize}\:container-padding {
+					padding-left: $space-4;
+					padding-right: $space-4;
+					box-sizing: content-box;
+				}
+
+				.#{$bpSize}\:container-padding-2 {
+					padding-left: $space-8;
+					padding-right: $space-8;
+					box-sizing: content-box;
+				}
+
+    }
+}

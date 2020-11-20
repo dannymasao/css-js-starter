@@ -1,0 +1,39 @@
+// --------------------------------------------------------------------
+// Line Height
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .leading-normal {
+//  	line-height: 1.5;
+// }
+// ----------------------------------
+
+@each $name, $value in $leading {
+    .leading-#{$name} {
+      line-height: $value;
+    }
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+//
+// 出力例
+// @media screen and (min-width: 370px) {
+//   .xs\:leading-none {
+//     line-height: 1;
+//   }
+// }
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+    @media screen and (min-width:#{$bpValue}) {
+
+			@each $name, $value in $leading {
+					.#{$bpSize}\:leading-#{$name} {
+						line-height: $value;
+					}
+			}
+
+    }
+}

@@ -1,0 +1,184 @@
+// --------------------------------------------------------------------
+// Padding
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .p-4 {
+//    padding: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .p-#{$name} {
+    padding: $value;
+  }
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+	@media screen and (min-width:#{$bpValue}) {
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:p-#{$name} {
+				padding: $value;
+			}
+		}
+
+	}
+}
+
+
+
+// --------------------------------------------------------------------
+// Padding Top / Bottom
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .py-4 {
+//    padding-top: 1rem;
+// 		padding-bottom: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .py-#{$name} {
+		padding-top: $value;
+		padding-bottom: $value;
+  }
+}
+
+// ----------------------------------
+// 出力例
+// .pt-4 {
+//    padding-top: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .pt-#{$name} {
+		padding-top: $value;
+  }
+}
+
+// ----------------------------------
+// 出力例
+// .pb-4 {
+//    padding-bottom: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .pb-#{$name} {
+		padding-bottom: $value;
+  }
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+	@media screen and (min-width:#{$bpValue}) {
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:py-#{$name} {
+				padding-top: $value;
+				padding-bottom: $value;
+			}
+		}
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:pt-#{$name} {
+				padding-top: $value;
+			}
+		}
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:pb-#{$name} {
+				padding-bottom: $value;
+			}
+		}
+
+	}
+}
+
+
+
+// --------------------------------------------------------------------
+// Padding Left / Right
+// --------------------------------------------------------------------
+
+// ----------------------------------
+// 出力例
+// .px-4 {
+// 		padding-left: 1rem;
+// 		padding-right: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .px-#{$name} {
+		padding-left: $value;
+		padding-right: $value;
+  }
+}
+
+// ----------------------------------
+// 出力例
+// .pl-4 {
+// 		padding-left: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .pl-#{$name} {
+		padding-left: $value;
+  }
+}
+
+// ----------------------------------
+// 出力例
+// .pr-4 {
+// 		padding-right: 1rem;
+// }
+// ----------------------------------
+
+@each $name, $value in $spacing {
+  .pr-#{$name} {
+		padding-right: $value;
+  }
+}
+
+// ----------------------------------
+// レスポンシブ (min-width)
+// ----------------------------------
+
+@each $bpSize, $bpValue in $breakpoints {
+	@media screen and (min-width:#{$bpValue}) {
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:px-#{$name} {
+				padding-left: $value;
+				padding-right: $value;
+			}
+		}
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:pl-#{$name} {
+				padding-left: $value;
+			}
+		}
+
+		@each $name, $value in $spacing {
+			.#{$bpSize}\:pr-#{$name} {
+				padding-right: $value;
+			}
+		}
+
+	}
+}
